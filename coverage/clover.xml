@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750241970417" clover="3.2.0">
-  <project timestamp="1750241970417" name="All files">
-    <metrics statements="145" coveredstatements="75" conditionals="2" coveredconditionals="2" methods="12" coveredmethods="1" elements="159" coveredelements="78" complexity="0" loc="145" ncloc="145" packages="3" files="4" classes="4"/>
+<coverage generated="1750246475492" clover="3.2.0">
+  <project timestamp="1750246475492" name="All files">
+    <metrics statements="145" coveredstatements="78" conditionals="4" coveredconditionals="2" methods="12" coveredmethods="1" elements="161" coveredelements="81" complexity="0" loc="145" ncloc="145" packages="3" files="4" classes="4"/>
     <package name="model">
       <metrics statements="24" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="mongoSchemas.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\time-control-accounting-my-version\src\model\mongoSchemas.ts">
@@ -33,9 +33,9 @@
       </file>
     </package>
     <package name="services.AccountingService">
-      <metrics statements="74" coveredstatements="30" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="1"/>
+      <metrics statements="74" coveredstatements="33" conditionals="3" coveredconditionals="1" methods="7" coveredmethods="1"/>
       <file name="AccountingServiceMongoImpl.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\time-control-accounting-my-version\src\services\AccountingService\AccountingServiceMongoImpl.ts">
-        <metrics statements="74" coveredstatements="30" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="1"/>
+        <metrics statements="74" coveredstatements="33" conditionals="3" coveredconditionals="1" methods="7" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -52,14 +52,14 @@
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
@@ -97,17 +97,17 @@
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
+        <line num="62" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
         <line num="73" count="1" type="stmt"/>
         <line num="74" count="1" type="stmt"/>
       </file>
@@ -116,12 +116,12 @@
       <metrics statements="47" coveredstatements="21" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="0"/>
       <file name="timeControlTypes.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\time-control-accounting-my-version\src\utils\timeControlTypes.ts">
         <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="1" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
       </file>
       <file name="tools.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\time-control-accounting-my-version\src\utils\tools.ts">
         <metrics statements="41" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>

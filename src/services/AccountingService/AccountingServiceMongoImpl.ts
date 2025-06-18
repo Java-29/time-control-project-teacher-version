@@ -63,7 +63,7 @@ export class AccountingServiceMongoImpl implements AccountingService{
         const emp = await EmployeeModel.findOne({id:empId})
         if(!emp) throw new Error(getError(404, `Employee with id ${empId} not found`))
 
-        const updated = await EmployeeModel.findByIdAndUpdate(emp._id, {
+        const updated = await EmployeeModel.findByIdAndUpdate<Employee>(emp._id, {
             firstName : employee.firstName,
             lastName : employee.lastName
         }, {new:true}).exec();
