@@ -3,6 +3,8 @@ import {Role} from "./timeControlTypes.js";
 import bcrypt from 'bcrypt'
 import {v4 as uuidv4} from 'uuid'
 import {FiredEmployeeModel, FiredEmployeeMongoSchema} from "../model/mongoSchemas.js";
+import {configuration} from "../app-config/time-control-config.js";
+import jwt from "jsonwebtoken";
 
 export const convertEmployeeDtoToEmployee = async (dto: EmployeeDto) => {
     const employee: Employee = {
@@ -38,4 +40,14 @@ export const checkRole = (role:string) => {
     const newRole = Object.values(Role).find(r => r === role)
     if(!newRole) throw new Error(getError(400, "Wrong role!"))
     return newRole;
+}
+
+export const getJWT = (userId: string, roles: Role[]) => {
+    const payload = {roles: JSON.stringify(roles)};
+    const secretKey = configuration.jwt.secret;
+    const options = {
+        expiresIn: configuration.jwt.exp_time as any,
+        subject: userId
+    }
+    return jwt.sign(payload, secretKey, options)
 }

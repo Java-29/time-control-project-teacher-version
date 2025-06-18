@@ -25,7 +25,7 @@ describe('changePassword', () => {
 
     test('Failed test: employee to fire not found', async () => {
         (service.getEmployeeById as jest.Mock) = jest.fn().mockRejectedValue(new Error("Error: not found"));
-        await expect(service.fireEmployee('UNKNOWN')).rejects.toThrow("Error: not found")
+        await expect(service.changePassword('UNKNOWN', mockPassword)).rejects.toThrow("Error: not found")
     });
 
     test('should successfully change password', async () => {

@@ -3,6 +3,7 @@ import express, {Request, Response} from "express";
 import asyncHandler from "express-async-handler"
 import {EmployeeDto} from "../model/Employee.js";
 import {AccountController} from "../controllers/AccountController.js";
+import {AuthRequest, LoginData} from "../utils/timeControlTypes.js";
 export const accountRouter = express.Router()
 const controller = new AccountController();
 
@@ -44,4 +45,9 @@ accountRouter.patch('/role', asyncHandler(async (req: Request, res: Response) =>
     const {id, newRole} = req.query;
     const result =  await controller.setRole(id as string, newRole as string)
     res.json(result);
+}))
+
+accountRouter.post('/login', asyncHandler(async (req: AuthRequest, res: Response) => {
+     const body = req.body as LoginData
+    const token = await  controller.login(body)
 }))

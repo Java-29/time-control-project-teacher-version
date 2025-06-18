@@ -1,8 +1,16 @@
 import {AccountingService} from "./AccountingService.js";
 import {Employee, EmployeeDto, SavedFiredEmployee} from "../../model/Employee.js";
 import {EmployeeModel, FiredEmployeeModel} from "../../model/mongoSchemas.js";
-import {checkFiredEmployees, checkRole, convertEmployeeToFiredEmployeeDto, getError} from "../../utils/tools.js";
+import {
+    checkFiredEmployees,
+    checkRole,
+    convertEmployeeToFiredEmployeeDto,
+    getError,
+    getJWT
+} from "../../utils/tools.js";
 import bcrypt from "bcrypt";
+import {Error} from "mongoose";
+import {LoginData} from "../../utils/timeControlTypes.js";
 
 export class AccountingServiceMongoImpl implements AccountingService{
 
@@ -69,6 +77,15 @@ export class AccountingServiceMongoImpl implements AccountingService{
         }, {new:true}).exec();
         if(!updated)throw new Error(getError(500, "Employee updating failed!"))
         return updated as Employee
+    }
+
+    async login(body: LoginData): Promise<string> {
+        const profile = await this.getEmployeeById(body.id);
+        if(!profile) throw new Error(getError(404, `Employee with id ${body.id} not found`))
+        if(!await bcrypt.compare(body.password, profile.hash))
+        throw new Error(getError(401,"Incorrect credentials"))
+        const token = getJWT(body.id, profile.roles)
+        return Promise.resolve("");
     }
 
 }

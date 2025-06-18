@@ -2,9 +2,12 @@ import {AccountingServiceMongoImpl} from "../services/AccountingService/Accounti
 import {AccountingService} from "../services/AccountingService/AccountingService.js";
 import {EmployeeDto} from "../model/Employee.js";
 import {checkRole, convertEmployeeDtoToEmployee} from "../utils/tools.js";
+import {configuration} from "../app-config/time-control-config.js";
+import {LoginData} from "../utils/timeControlTypes.js";
 
 export class AccountController {
-    private service:AccountingService = new AccountingServiceMongoImpl()
+    //private service:AccountingService = new AccountingServiceMongoImpl()
+    private service:AccountingService = configuration.accountingService;
 
     async addEmployee(body: EmployeeDto) {
         const employee = await convertEmployeeDtoToEmployee(body);
@@ -33,5 +36,9 @@ export class AccountController {
 
     async setRole(id: string, newRole: string) {
         return await this.service.setRole(id, newRole)
+    }
+
+    async login(body: LoginData) {
+        return await this.service.login(body)
     }
 }

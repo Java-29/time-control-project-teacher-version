@@ -55,3 +55,4 @@
 ::1 - - [15/Jun/2025:11:08:10 +0000] "PATCH /accounts/role?id=100000030&newRole=crew HTTP/1.1" 200 224 "-" "PostmanRuntime/7.44.0"
 ::1 - - [15/Jun/2025:11:12:30 +0000] "PATCH /accounts/role?id=100000030&newRole=crew HTTP/1.1" 200 231 "-" "PostmanRuntime/7.44.0"
 ::1 - - [15/Jun/2025:11:12:44 +0000] "PATCH /accounts/role?id=100000030&newRole=manager HTTP/1.1" 200 241 "-" "PostmanRuntime/7.44.0"
+::1 - - [18/Jun/2025:17:21:53 +0000] "GET /accounts HTTP/1.1" 200 1167 "-" "PostmanRuntime/7.44.0"

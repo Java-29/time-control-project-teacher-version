@@ -7,6 +7,7 @@ import * as fs from "node:fs";
 import morgan from 'morgan'
 import {validateBody} from "./middleware/validation.js";
 import {joiSchemas} from "./utils/joiSchemas.js";
+import {authenticate, skipRoutes} from "./middleware/authentication.js";
 
 export const launchServer = () => {
     const app = express();
@@ -21,6 +22,8 @@ export const launchServer = () => {
     //=============Middleware=============================
     app.use(morgan('dev'));
     app.use(morgan('combined', {stream: logStream}));
+    app.use(authenticate(configuration.accountingService));
+    app.use(skipRoutes(configuration.skipPaths))
     app.use(express.json());
     app.use(validateBody(joiSchemas));
     //===============Routing==============================
