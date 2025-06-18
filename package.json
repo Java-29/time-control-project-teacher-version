@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "start": "tsc && node ./build/app.js",
-    "dev": "tsx watch ./src/app.ts dev"
+    "dev": "tsx watch app.ts dev"
   },
   "type": "module",
   "keywords": [],
