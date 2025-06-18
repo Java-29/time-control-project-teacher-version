@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750081895529" clover="3.2.0">
-  <project timestamp="1750081895529" name="All files">
-    <metrics statements="145" coveredstatements="79" conditionals="4" coveredconditionals="4" methods="12" coveredmethods="1" elements="161" coveredelements="84" complexity="0" loc="145" ncloc="145" packages="3" files="4" classes="4"/>
+<coverage generated="1750241970417" clover="3.2.0">
+  <project timestamp="1750241970417" name="All files">
+    <metrics statements="145" coveredstatements="75" conditionals="2" coveredconditionals="2" methods="12" coveredmethods="1" elements="159" coveredelements="78" complexity="0" loc="145" ncloc="145" packages="3" files="4" classes="4"/>
     <package name="model">
       <metrics statements="24" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="mongoSchemas.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\cw20-time-control-v3-accounting-unit-tests\src\model\mongoSchemas.ts">
+      <file name="mongoSchemas.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\time-control-accounting-my-version\src\model\mongoSchemas.ts">
         <metrics statements="24" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -33,9 +33,9 @@
       </file>
     </package>
     <package name="services.AccountingService">
-      <metrics statements="74" coveredstatements="34" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="1"/>
-      <file name="AccountingServiceMongoImpl.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\cw20-time-control-v3-accounting-unit-tests\src\services\AccountingService\AccountingServiceMongoImpl.ts">
-        <metrics statements="74" coveredstatements="34" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="1"/>
+      <metrics statements="74" coveredstatements="30" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="1"/>
+      <file name="AccountingServiceMongoImpl.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\time-control-accounting-my-version\src\services\AccountingService\AccountingServiceMongoImpl.ts">
+        <metrics statements="74" coveredstatements="30" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -52,14 +52,14 @@
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
@@ -72,18 +72,18 @@
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-        <line num="40" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="41" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
@@ -114,7 +114,7 @@
     </package>
     <package name="utils">
       <metrics statements="47" coveredstatements="21" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="0"/>
-      <file name="timeControlTypes.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\cw20-time-control-v3-accounting-unit-tests\src\utils\timeControlTypes.ts">
+      <file name="timeControlTypes.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\time-control-accounting-my-version\src\utils\timeControlTypes.ts">
         <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="3" type="stmt"/>
@@ -123,7 +123,7 @@
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
       </file>
-      <file name="tools.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\cw20-time-control-v3-accounting-unit-tests\src\utils\tools.ts">
+      <file name="tools.ts" path="C:\Users\konsp\Desktop\TelRan Groups\Java-29NodeJS\time-control-accounting-my-version\src\utils\tools.ts">
         <metrics statements="41" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
