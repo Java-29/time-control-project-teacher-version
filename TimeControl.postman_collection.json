@@ -1,0 +1,490 @@
+{
+	"info": {
+		"_postman_id": "6438e8f4-751c-4d36-a567-94f4dddb739b",
+		"name": "TimeControl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18222058",
+		"_collection_link": "https://www.postman.com/warped-trinity-518501/workspace/java-29/collection/18222058-6438e8f4-751c-4d36-a567-94f4dddb739b?action=share&source=collection_link&creator=18222058"
+	},
+	"item": [
+		{
+			"name": "Accounting",
+			"item": [
+				{
+					"name": "hireNewEmployee",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Frodo\",\r\n    \"lastName\":\"Baggins\",\r\n    \"id\":\"112233445\",\r\n    \"password\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3050/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "hireNewEmployee",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Vasiliy\",\r\n    \"lastName\":\"Pupkin\",\r\n    \"id\":\"100000050\",\r\n    \"password\":\"123456789\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3050/accounts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3050",
+									"path": [
+										"accounts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c6-F7DGhVFeDKu54/EzCpstCFZ5Nuk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 07:47:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Vasiliy\",\n    \"lastName\": \"Pupkin\",\n    \"hash\": \"$2b$10$1HiqmMsgNygKwmMbgmxEjePnM.X6UPEEvw0P6AFZrxE0ifQ1t3W3u\",\n    \"id\": \"100000050\",\n    \"roles\": [\n        \"crew\"\n    ],\n    \"table_num\": \"d1d04894-3dcf-4796-b7a1-58ce5c94bd25\"\n}"
+						},
+						{
+							"name": "hireNewEmployee: Error 409. Employee already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Vasiliy\",\r\n    \"lastName\":\"Pupkin\",\r\n    \"id\":\"100000050\",\r\n    \"password\":\"123456789\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3050/accounts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3050",
+									"path": [
+										"accounts"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 13:52:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								}
+							],
+							"cookie": [],
+							"body": "Employee with tab number 100000050 already exists"
+						}
+					]
+				},
+				{
+					"name": "getAllEmployees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Frodo\",\r\n    \"lastName\":\"Baggins\",\r\n    \"id\":\"112233445\",\r\n    \"password\":\"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3050/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"accounts"
+							]
+						},
+						"description": "You can get full information about all employees"
+					},
+					"response": []
+				},
+				{
+					"name": "updateEmployeeWithoutPassword",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Meriadok\",\r\n    \"lastName\":\"Craul\",\r\n    \"id\":\"112233445\",\r\n    \"password\":\"no_password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3050/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3050/accounts/account?id=112233445",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"accounts",
+								"account"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "112233445"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fireEmployee",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"987654321\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3050/accounts/account?id=112233445",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"accounts",
+								"account"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "112233445"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setNewRole",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Frodo\",\r\n    \"lastName\":\"Baggins\",\r\n    \"id\":\"112233445\",\r\n    \"password\":\"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3050/accounts/role?id=10000020&newRole=manager",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"accounts",
+								"role"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "10000020"
+								},
+								{
+									"key": "newRole",
+									"value": "manager"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"100000010\",\r\n    \"password\":\"123456789\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3050/accounts/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"accounts",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ShiftsControl",
+			"item": [
+				{
+					"name": "openShift",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "112233446",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{vault:authorization-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3050/shifts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"shifts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "closeShift",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "112233446",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{vault:authorization-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3050/shifts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"shifts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkBreak_15min",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "112233446",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{vault:authorization-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3050/shifts?breakDuration=15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"shifts"
+							],
+							"query": [
+								{
+									"key": "breakDuration",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

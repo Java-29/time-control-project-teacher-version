@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Time Control system for your enterprice",
+    "version": "1.0.0",
+    "description": "API for control, save ande manage working time of employees"
+  },
+  "security": [
+    {
+    "bearerAuth":[]
+  }
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:3050/",
+      "description": "Development local server"
+    }
+  ],
+  "paths": {
+    "/accounts": {
+      "get": {
+        "summary": "Get all employees",
+        "tags": ["Employees"],
+
+        "responses": {
+          "200": {
+            "description": "Employee list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

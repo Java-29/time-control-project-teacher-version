@@ -1,7 +1,7 @@
 
 {
   "port": 3050,
-  "skipPaths": ["POST/accounts/login"],
+  "skipPaths": ["POST/accounts/login","GET/docs"],
   "pathsRoles": {
     "POST/accounts": ["hr"],
     "GET/accounts" : ["hr", "mng", "sup"],

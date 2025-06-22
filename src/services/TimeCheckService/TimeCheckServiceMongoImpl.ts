@@ -4,6 +4,7 @@ import {ShiftRecord} from "../../utils/timeControlTypes.js";
 import {getError} from "../../utils/tools.js";
 
 export class TimeCheckServiceMongoImpl implements TimeCheckService{
+
     async breakTime(userId: string, breakTime: number): Promise<void> {
         //================looking for opened shifts============================
         const openShifts = await ShiftControlModel.find<ShiftRecord>({userId, shiftFinish: null})

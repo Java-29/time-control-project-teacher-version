@@ -10,7 +10,8 @@ import {joiSchemas} from "./utils/joiSchemas.js";
 import {authenticate, skipRoutes} from "./middleware/authentication.js";
 import {authorize} from "./middleware/authorization.js";
 import {shiftControlRouter} from "./routers/shiftControlRouter.js";
-
+import swaggerUi from 'swagger-ui-express';
+import * as SwaggerDoc from '../docs/openapi.json' with {type:'json'}
 export const launchServer = () => {
     const app = express();
     //=================Mongo Connection===================
@@ -24,11 +25,16 @@ export const launchServer = () => {
     //=============Middleware=============================
     app.use(morgan('dev'));
     app.use(morgan('combined', {stream: logStream}));
-    app.use(authenticate(configuration.accountingService));
-    app.use(skipRoutes(configuration.skipPaths))
-    app.use(authorize(configuration.pathsRoles))
+    //===============Swagger Docs========================
+    app.use('/docs',swaggerUi.serve, swaggerUi.setup(SwaggerDoc))
+    //===============Security============================
+    // app.use(authenticate(configuration.accountingService));
+    // app.use(skipRoutes(configuration.skipPaths))
+    // app.use(authorize(configuration.pathsRoles))
+
     app.use(express.json());
     app.use(validateBody(joiSchemas));
+
     //===============Routing==============================
     app.use('/accounts', accountRouter);
     app.use('/shifts', shiftControlRouter);
