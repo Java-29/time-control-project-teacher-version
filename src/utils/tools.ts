@@ -51,3 +51,9 @@ export const getJWT = (userId: string, roles: Role[]) => {
     }
     return jwt.sign(payload, secretKey, options)
 }
+
+export const normalizePath = (path:string) => {
+    if(path.startsWith('/accounts/account')) return '/accounts/account';
+    if(path.startsWith('api/books/book')) return 'api/books/book';
+    return path;
+}

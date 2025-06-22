@@ -1,4 +1,16 @@
+
 {
   "port": 3050,
-  "skipPaths": []
+  "skipPaths": ["POST/accounts/login"],
+  "pathsRoles": {
+    "POST/accounts": ["hr"],
+    "GET/accounts" : ["hr", "mng", "sup"],
+    "PUT/accounts" : ["hr"],
+    "GET/accounts/account" : ["hr","mng", "sup"],
+    "PATCH/accounts/account" : ["sup"],
+    "DELETE/accounts/account" : ["hr","sup"],
+    "PATCH/accounts/role" : ["sup"]
+
+  }
+
 }

@@ -11,15 +11,16 @@ async function basicAuth(header: string, req: AuthRequest, service: AccountingSe
 
     const authToken = Buffer.from(header.substring(BASIC.length), 'base64').toString('ascii');
     console.log(authToken);
-    const [username, password] = authToken.split(":")
-    if(username === process.env.OWNER && password === process.env.OWNER_PASS) {
+    const [userId, password] = authToken.split(":")
+    if(userId === process.env.OWNER && password === process.env.OWNER_PASS) {
         req.userId = "GURU";
         req.role = [Role.SUP];
+        console.log(req.role)
     } else
         try {
-        const account = await service.getEmployeeById(req.userId!);
+        const account = await service.getEmployeeById(userId!);
         if(bcrypt.compareSync(password,account.hash)){
-            req.userId = username;
+            req.userId = userId;
             req.role = account.roles;
             console.log("reader authenticated")
         }

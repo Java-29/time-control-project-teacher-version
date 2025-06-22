@@ -4,7 +4,7 @@ export enum Role {
     CREW = 'crew',
     MNG = 'manager',
     HR = 'hr',
-    SUP = 'supervisor'
+    SUP = 'sup'
 }
 
 export interface AuthRequest extends Request{

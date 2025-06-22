@@ -10,7 +10,7 @@ import {
 } from "../../utils/tools.js";
 import bcrypt from "bcrypt";
 import {Error} from "mongoose";
-import {LoginData} from "../../utils/timeControlTypes.js";
+import {LoginData, Role} from "../../utils/timeControlTypes.js";
 
 export class AccountingServiceMongoImpl implements AccountingService{
 
@@ -81,11 +81,13 @@ export class AccountingServiceMongoImpl implements AccountingService{
 
     async login(body: LoginData): Promise<string> {
         const profile = await this.getEmployeeById(body.id);
-        if(!profile) throw new Error(getError(404, `Employee with id ${body.id} not found`))
+        if(!profile) throw new Error(getError(404, `Employee with id ${body.id} not found`));
+        if(profile.roles.length===1&&profile.roles[0]===Role.CREW)
+            throw new Error(getError(403, ""))
         if(!await bcrypt.compare(body.password, profile.hash))
         throw new Error(getError(401,"Incorrect credentials"))
         const token = getJWT(body.id, profile.roles)
-        return Promise.resolve("");
+        return Promise.resolve(token);
     }
 
 }

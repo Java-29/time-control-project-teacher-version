@@ -50,4 +50,5 @@ accountRouter.patch('/role', asyncHandler(async (req: Request, res: Response) =>
 accountRouter.post('/login', asyncHandler(async (req: AuthRequest, res: Response) => {
      const body = req.body as LoginData
     const token = await  controller.login(body)
+    res.send(token);
 }))
