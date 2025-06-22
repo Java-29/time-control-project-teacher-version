@@ -9,6 +9,7 @@ import {validateBody} from "./middleware/validation.js";
 import {joiSchemas} from "./utils/joiSchemas.js";
 import {authenticate, skipRoutes} from "./middleware/authentication.js";
 import {authorize} from "./middleware/authorization.js";
+import {shiftControlRouter} from "./routers/shiftControlRouter.js";
 
 export const launchServer = () => {
     const app = express();
@@ -29,7 +30,8 @@ export const launchServer = () => {
     app.use(express.json());
     app.use(validateBody(joiSchemas));
     //===============Routing==============================
-    app.use('/accounts', accountRouter)
+    app.use('/accounts', accountRouter);
+    app.use('/shifts', shiftControlRouter);
     //==============ErrorHandler===================
     app.use(errorHandler);
 }

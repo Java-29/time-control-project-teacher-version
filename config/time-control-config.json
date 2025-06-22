@@ -9,8 +9,10 @@
     "GET/accounts/account" : ["hr","mng", "sup"],
     "PATCH/accounts/account" : ["sup"],
     "DELETE/accounts/account" : ["hr","sup"],
-    "PATCH/accounts/role" : ["sup"]
-
+    "PATCH/accounts/role" : ["sup"],
+    "POST/shifts": ["crew"],
+    "PATCH/shifts": ["crew"],
+    "PUT/shifts": ["crew"]
   }
 
 }

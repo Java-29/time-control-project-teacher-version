@@ -22,10 +22,10 @@ async function basicAuth(header: string, req: AuthRequest, service: AccountingSe
         if(bcrypt.compareSync(password,account.hash)){
             req.userId = userId;
             req.role = account.roles;
-            console.log("reader authenticated")
+            console.log("Authenticated")
         }
     } catch (e) {
-        console.log("reader not authenticated")
+        console.log("Not authenticated")
     }
 
 }

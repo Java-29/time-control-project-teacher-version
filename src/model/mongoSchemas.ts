@@ -22,3 +22,12 @@ export const FiredEmployeeMongoSchema = new mongoose.Schema({
 }, {versionKey:false})
 
 export const FiredEmployeeModel = mongoose.model('Fired', FiredEmployeeMongoSchema, 'fired_emp_collection')
+
+export const ShiftDataMongoSchema = new mongoose.Schema({
+    userId: {type: String, required: true},
+    shiftStart: {type: String, required: true},
+    shiftFinish: {type: String, default: null},
+    breaks: {type: [Number]}
+});
+
+export const ShiftControlModel = mongoose.model('Shifts', ShiftDataMongoSchema, 'shifts_collection')

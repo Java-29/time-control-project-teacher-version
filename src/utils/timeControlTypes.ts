@@ -16,3 +16,10 @@ export type LoginData = {
     id: string,
     password: string
 }
+
+export type ShiftRecord = {
+    userId: string,
+    shiftStart: string,
+    shiftFinish?: string | null,
+    breaks:number[]
+}
